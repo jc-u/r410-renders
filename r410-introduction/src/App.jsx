@@ -2,6 +2,7 @@ import React from 'react';
 import Cards from './Cards';
 import cardsData from "./constants/cardsData";
 import useNotificationsData from "./hooks/useNotificationsData";
+import NotificationsCenter from './NotificationCenter';
 
 
 function App() {
@@ -18,7 +19,10 @@ function App() {
         <Cards cardsData={cardsData} />
       </main>
       <footer className="app__footer footer">
-      {notificationsData.length} notification</footer>
+        <NotificationsCenter
+          notificationsData={notificationsData}
+        />
+      </footer>
     </div>
   );
 }
