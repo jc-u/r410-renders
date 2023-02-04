@@ -4,6 +4,7 @@ import Card from "./Card";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleMinus, faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import useShowable from "./hooks/useShowable";
+import useRendersNumber from "./hooks/useRendersNumbers";
 
 function FoldableCard(props) {
   const { title, children, opened, onToggleOpened } = props;
@@ -12,6 +13,7 @@ function FoldableCard(props) {
     "foldable"
   );
   useEffect(() => setIsShown(opened), [opened]);
+  const rendersNumber = useRendersNumber();
   const handleClick = () => {
     toggleShown();
     if (onToggleOpened !== undefined) {
@@ -23,7 +25,7 @@ function FoldableCard(props) {
     <Card
       title={
         <>
-        {title}
+        [{rendersNumber}] {title}
         <FontAwesomeIcon
         className="foldable-icon"
         icon={isShown ? faCircleMinus : faCirclePlus}

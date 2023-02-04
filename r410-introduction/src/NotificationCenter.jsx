@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import useRendersNumber from "./hooks/useRendersNumbers";
 
 function NotificationsCenter(props) {
   const { notificationsData } = props;
+  const rendersNumber = useRendersNumber();
 
   return (
     <>
-     {notificationsData.length} notification
+     [{rendersNumber}] {notificationsData.length} notification
     </>
   );
 }
