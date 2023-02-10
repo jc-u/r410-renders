@@ -6,7 +6,7 @@ import Card from "./Card";
 import useRendersNumber from "./hooks/useRendersNumbers";
 
 function Notification(props) {
-  const { data} = props;
+  const { data, onDelete } = props;
   const { id, title, content } = data;
   const rendersNumber = useRendersNumber();
 
@@ -19,8 +19,8 @@ function Notification(props) {
           <FontAwesomeIcon className="notification-icon" icon={faCircleXmark} />
         </>
       }
-      
-      >
+      onClick={() => onDelete(id)}
+    >
       {content}
     </Card>
   );

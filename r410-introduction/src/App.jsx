@@ -7,7 +7,7 @@ import useRendersNumber from "./hooks/useRendersNumbers";
 
 
 function App() {
-  const { notificationsData, addNotification } = useNotificationsData();
+  const { notificationsData, addNotification, deleteNotification } = useNotificationsData();
   const rendersNumber = useRendersNumber();
 
   return (
@@ -24,6 +24,7 @@ function App() {
       <footer className="app__footer footer">
         <NotificationsCenter
           notificationsData={notificationsData}
+          onDelete={deleteNotification}
         />
       </footer>
     </div>

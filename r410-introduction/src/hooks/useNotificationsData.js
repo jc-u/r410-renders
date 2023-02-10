@@ -19,8 +19,13 @@ export default function useNotificationsData() {
     ]);
   };
 
+  const deleteNotification = (id) => {
+    setNotificationsData(notificationsData.filter((data) => data.id !== id));
+  };
+
   return {
     notificationsData,
     addNotification,
+    deleteNotification,
   };
 }
